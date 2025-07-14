@@ -35,3 +35,18 @@ app.get('/', (req, res) => {
 // 设置端口并启动服务器
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`服务器运行在端口 ${PORT}`)); 
+const path = require('path');
+
+// ... 在你定义完所有 API 路由之后，加入以下代码 ...
+
+// 判断是否为生产环境
+if (process.env.NODE_ENV === 'production') {
+  // 设置静态文件托管，指向前端构建产物 dist 目录
+  app.use(express.static(path.join(__dirname, 'dist')));
+
+  // 对于所有未匹配到 API 的请求，都返回前端的入口 index.html
+  // 这样 Vue Router 就能接管路由
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+  });
+}
