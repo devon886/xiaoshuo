@@ -171,7 +171,7 @@ export default defineComponent({
     
     // 初始化 Socket.io 连接
     const initSocketConnection = () => {
-      socket = io('http://localhost:5000', {
+      socket = io('../api/novels', {
         auth: {
           token: localStorage.getItem('token') // 使用存储的用户令牌进行身份验证
         }
@@ -206,7 +206,7 @@ export default defineComponent({
     const fetchChapterDetails = async () => {
       try {
         loading.value = true;
-        const response = await axios.get(`http://localhost:5000/api/chapters/${chapterId.value}`);
+        const response = await axios.get(`../api/novels/${chapterId.value}`);
         const chapterData = response.data;
         
         // 更新章节数据
@@ -234,7 +234,7 @@ export default defineComponent({
     // 获取小说标题
     const fetchNovelTitle = async (novelId: string) => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/novels/${novelId}`);
+        const response = await axios.get(`../api/chapters/${novelId}`);
         novelTitle.value = response.data.title;
       } catch (err) {
         console.error('获取小说标题失败:', err);
@@ -335,7 +335,7 @@ export default defineComponent({
           saveStatus.value = 'saving';
           
           try {
-            await axios.put(`http://localhost:5000/api/chapters/${chapterId.value}`, chapter);
+            await axios.put(`../api/chapters/${chapterId.value}`, chapter);
             
             // 更新原始数据
             originalChapter.value = JSON.parse(JSON.stringify(chapter));
@@ -385,7 +385,7 @@ export default defineComponent({
       try {
         publishing.value = true;
         
-        await axios.put(`http://localhost:5000/api/chapters/${chapterId.value}/publish`);
+        await axios.put(`../api/chapters/${chapterId.value}/publish`);
         
         chapter.status = 'published';
         originalChapter.value = JSON.parse(JSON.stringify(chapter));
