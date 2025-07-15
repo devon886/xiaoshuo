@@ -1,5 +1,5 @@
-const Chapter = require('../models/Chapter');
-const Novel = require('../models/Novel');
+const Chapter = require('./Chapter');
+const Novel = require('./Novel');
 
 // 获取单个章节的详细内容
 exports.getChapterById = async (req, res) => {

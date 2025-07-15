@@ -1,5 +1,5 @@
-const Novel = require('../models/Novel');
-const User = require('../models/User');
+const Novel = require('./Novel');
+const User = require('./User');
 
 // 搜索小说
 exports.searchNovels = async (req, res) => {

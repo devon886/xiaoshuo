@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const novelController = require('../controllers/novelController');
-const auth = require('../middleware/auth');
+const novelController = require('./novelController');
+const auth = require('./auth');
 
 // @route   GET /api/novels
 // @desc    获取所有小说的列表（精简信息）
