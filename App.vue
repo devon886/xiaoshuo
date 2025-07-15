@@ -15,7 +15,7 @@
       
       <el-footer class="footer">
         <div class="container">
-          <p>&copy; 2023 小说网站 - 所有权利保留</p>
+          <p>&copy; 2025 小说网站 - 所有权利保留</p>
         </div>
       </el-footer>
     </el-container>
