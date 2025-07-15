@@ -137,7 +137,7 @@ export default defineComponent({
         error.value = null;
         
         // 获取用户信息和小说
-        const response = await axios.get<UserResponse>(`http://localhost:5000/api/users/${userId}`);
+        const response = await axios.get<UserResponse>(`../api/users/${userId}`);
         user.value = response.data.user;
         novels.value = response.data.novels;
         bookshelf.value = response.data.bookshelf || [];
