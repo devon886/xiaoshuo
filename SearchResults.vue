@@ -80,7 +80,7 @@ export default defineComponent({
       error.value = '';
       
       try {
-        const response = await axios.get(`http://localhost:5000/api/search`, {
+        const response = await axios.get(`../api/search`, {
           params: { q: query }
         });
         
