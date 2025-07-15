@@ -141,7 +141,7 @@ export default defineComponent({
 
       try {
         loading.value = true;
-        const response = await axios.get(`http://localhost:5000/api/novels?authorId=${userStore.user.id}`);
+        const response = await axios.get(`../api/novels?authorId=${userStore.user.id}`);
         novels.value = response.data;
         loading.value = false;
       } catch (err) {
@@ -184,7 +184,7 @@ export default defineComponent({
     // 删除小说
     const deleteNovel = async (id: string) => {
       try {
-        await axios.delete(`http://localhost:5000/api/novels/${id}`);
+        await axios.delete(`../api/novels/${id}`);
         showSuccessToast('小说已成功删除');
         // 重新获取小说列表
         fetchAuthorNovels();
