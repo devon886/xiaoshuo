@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const chapterController = require('../controllers/chapterController');
-const auth = require('../middleware/auth');
+const chapterController = require('./chapterController');
+const auth = require('./auth');
 
 // @route   GET /api/chapters/:id
 // @desc    获取单个章节的详细内容

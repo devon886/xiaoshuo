@@ -1,5 +1,5 @@
-const Novel = require('../models/Novel');
-const Chapter = require('../models/Chapter');
+const Novel = require('./Novel');
+const Chapter = require('./Chapter');
 const mongoose = require('mongoose');
 
 // 获取所有小说的列表（精简信息，支持分页）

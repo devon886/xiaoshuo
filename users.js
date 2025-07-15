@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userController');
-const auth = require('../middleware/auth');
+const userController = require('./userController');
+const auth = require('./auth');
 
 // @route   POST api/users/register
 // @desc    注册用户

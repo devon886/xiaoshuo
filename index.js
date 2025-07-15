@@ -1,7 +1,7 @@
 const socketIo = require('socket.io');
 const jwt = require('jsonwebtoken');
-const Chapter = require('../models/Chapter');
-const Novel = require('../models/Novel');
+const Chapter = require('./Chapter');
+const Novel = require('./Novel');
 
 // 初始化Socket.io服务
 const initSocketIO = (server) => {

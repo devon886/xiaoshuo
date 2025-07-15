@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
-const connectDB = require('./config/db');
-const initSocketIO = require('./socket');
+const connectDB = require('./db');
+const initSocketIO = require('./index');
 require('dotenv').config();
 
 // 初始化Express应用

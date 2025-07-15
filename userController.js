@@ -1,5 +1,5 @@
-const User = require('../models/User');
-const Novel = require('../models/Novel');
+const User = require('./User');
+const Novel = require('./Novel');
 const jwt = require('jsonwebtoken');
 
 // 注册新用户
