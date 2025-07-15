@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // 设置基础URL
-const API_URL = 'http://localhost:5000/api';
+const API_URL = '../api/novels';
 
 // 创建axios实例
 const api = axios.create({
