@@ -87,7 +87,7 @@ export default defineComponent({
     // 获取章节详情
     const fetchChapterDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/chapters/${chapterId}`);
+        const response = await axios.get(`../api/chapters/${chapterId}`);
         const chapter = response.data;
         
         content.value = chapter.content || '';
@@ -97,7 +97,7 @@ export default defineComponent({
         
         // 获取小说标题
         if (chapter.novel) {
-          const novelResponse = await axios.get(`http://localhost:5000/api/novels/${chapter.novel}`);
+          const novelResponse = await axios.get(`../api/novels/${chapter.novel}`);
           novelTitle.value = novelResponse.data.title || '未命名小说';
         }
       } catch (error) {
@@ -227,7 +227,7 @@ export default defineComponent({
         saveStatus.value = 'saving';
         saveInProgress.value = true;
         
-        await axios.put(`http://localhost:5000/api/chapters/${chapterId}`, {
+        await axios.put(`../api/chapters/${chapterId}`, {
           title: chapterTitle.value,
           content: content.value,
           chapterNumber: chapterNumber.value
@@ -250,7 +250,7 @@ export default defineComponent({
         await saveContent();
         
         // 发布章节
-        await axios.put(`http://localhost:5000/api/chapters/${chapterId}/publish`);
+        await axios.put(`../api/chapters/${chapterId}/publish`);
         
         alert('章节已发布');
         // 可以选择跳转到小说详情页
