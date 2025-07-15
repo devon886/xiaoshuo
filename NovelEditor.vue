@@ -290,7 +290,7 @@ export default defineComponent({
       
       try {
         loading.value = true;
-        const response = await axios.get(`http://localhost:5000/api/novels/${novelId.value}`);
+        const response = await axios.get(`../api/novels/${novelId.value}`);
         const novelData = response.data;
         
         // 更新小说数据
@@ -314,7 +314,7 @@ export default defineComponent({
     const fetchChapters = async () => {
       try {
         loadingChapters.value = true;
-        const response = await axios.get(`http://localhost:5000/api/novels/${novelId.value}/chapters`);
+        const response = await axios.get(`../api/novels/${novelId.value}/chapters`);
         chapters.value = response.data;
         loadingChapters.value = false;
       } catch (err) {
@@ -338,13 +338,13 @@ export default defineComponent({
             if (isCreate.value) {
               // 创建新小说
               novel.author = userStore.user?.id || '';
-              response = await axios.post('http://localhost:5000/api/novels', novel);
+              response = await axios.post('../api/novels', novel);
               
               showSuccessToast('小说创建成功');
               router.push(`/author/novel/${response.data._id}/edit`);
             } else {
               // 更新小说
-              response = await axios.put(`http://localhost:5000/api/novels/${novelId.value}`, novel);
+              response = await axios.put(`../api/novels/${novelId.value}`, novel);
               
               // 更新原始数据
               originalNovel.value = JSON.parse(JSON.stringify(novel));
@@ -366,7 +366,7 @@ export default defineComponent({
       try {
         publishing.value = true;
         
-        await axios.put(`http://localhost:5000/api/novels/${novelId.value}/publish`);
+        await axios.put(`../api/novels/${novelId.value}/publish`);
         
         novel.status = 'published';
         originalNovel.value = JSON.parse(JSON.stringify(novel));
@@ -383,7 +383,7 @@ export default defineComponent({
     // 创建新章节
     const createChapter = async () => {
       try {
-        const response = await axios.post(`http://localhost:5000/api/novels/${novelId.value}/chapters`, {
+        const response = await axios.post(`../api/novels/${novelId.value}/chapters`, {
           title: `第${chapters.value.length + 1}章`,
           chapterNumber: chapters.value.length + 1,
         });
@@ -426,7 +426,7 @@ export default defineComponent({
     // 删除章节
     const deleteChapter = async (chapterId: string) => {
       try {
-        await axios.delete(`http://localhost:5000/api/chapters/${chapterId}`);
+        await axios.delete(`../api/chapters/${chapterId}`);
         
         showSuccessToast('删除成功');
         
