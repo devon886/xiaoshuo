@@ -108,7 +108,7 @@ export default defineComponent({
         loading.value = true;
         error.value = null;
         
-        const response = await axios.get('http://localhost:5000/api/novels', {
+        const response = await axios.get('../api/novels', {
           params: { page, limit }
         });
         
