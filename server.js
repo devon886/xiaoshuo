@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 // 设置端口并启动服务器
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`服务器运行在端口 ${PORT}`)); 
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`)); 
 const path = require('path');
 
 // ... 在你定义完所有 API 路由之后，加入以下代码 ...
