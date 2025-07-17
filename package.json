@@ -1,23 +1,30 @@
 {
-  "name": "novel-website-server",
+  "name": "your-project-name",
   "version": "1.0.0",
-  "description": "小说网站后端API",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "socket-test": "node socket-test.js"
-  },
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.3",
-    "socket.io": "^4.6.1"
+    "start": "node server.js", 
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.10.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "element-plus": "^2.10.4",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.3",
+    "pinia": "^3.0.3",
+    "quill": "^2.0.0-rc.2",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1",
+    "vue-toastification": "^2.0.0-rc.5"
   }
-} 
+}
